@@ -47,7 +47,7 @@ async def modify_reservation_status(reservation_id, status):
 
 async def create_reservation(room_id, arrival_date, departure_date):
     """
-    Creates a reservation and returns it
+    Creates a new reservation and returns it
     :param room_id:
     :param arrival_date:
     :param departure_date:

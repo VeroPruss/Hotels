@@ -27,7 +27,7 @@ async def cancel_reservation(request, reservation_id):
 @app.post("/api/reservation")
 async def create_reservation(request):
     """
-    Creates reservation
+    Creates new reservation
     """
     return json(await AM.manage_request(RequestType.CREATE_RESERVATION,
                                         request.json["room_id"],
