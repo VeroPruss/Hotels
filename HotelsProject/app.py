@@ -29,16 +29,6 @@ async def create_reservation(request):
     """
     Creates reservation
     """
-    # print(request.form)
-    # print(request.form["hotel_id"][0])
-    # print(request.form["room_type"][0])
-    # print(request.form["arrival_date"][0])
-    # print(request.form["departure_date"][0])
-    # print(request.json["room_id"], request.json["arrival_date"], request.json["departure_date"])
-    # return json(await AM.manage_request(RequestType.CREATE_RESERVATION,
-    #                                     request.form["room_id"][0],
-    #                                     request.form["arrival_date"][0],
-    #                                     request.form["departure_date"][0]))
     return json(await AM.manage_request(RequestType.CREATE_RESERVATION,
                                         request.json["room_id"],
                                         request.json["arrival_date"],
@@ -50,13 +40,10 @@ async def room_inventory(request, hotel_id):
     """
     Get room inventory by hotel id and date range
     """
-    # print(hotel_id)
-    # print(request.args["date_from"][0])
-    # print(request.args["date_to"][0])
     return json(await AM.manage_request(RequestType.GET_HOTEL_ROOM_INVENTORY_LIST,
                                         hotel_id,
-                                        request.args['date_from'][0],
-                                        request.args['date_to'][0]))
+                                        request.args["date_from"][0],
+                                        request.args["date_to"][0]))
 
 
 if __name__ == "__main__":

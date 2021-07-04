@@ -41,8 +41,8 @@ async def modify_reservation_status(reservation_id, status):
                               reservation.departure_date)
 
     # Check the number of updated rows
-    if not int(await DAL.update_reservation_status(reservation_id, status)) > 0:
-        raise Error("Reservation  was not updated.")
+    if int(await DAL.update_reservation_status(reservation_id, status)) <= 0:
+        raise Error("Reservation was not updated.")
 
 
 async def create_reservation(room_id, arrival_date, departure_date):
